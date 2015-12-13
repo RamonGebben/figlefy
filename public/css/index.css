@@ -62,7 +62,7 @@ header {
 }
 
 header pre {
-    overflow: visible;
+    /*overflow: visible;*/
 }
 
 a, a:visited {
