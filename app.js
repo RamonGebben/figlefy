@@ -11,6 +11,10 @@ server.connection({
     port: 8000
 });
 
+
+String.prototype.titleize = () => this.split(/[.?*+^$[\]\\(){}_\s|-]/g).map(function( s ){ return s.capitalize(); }).join(' ');
+String.prototype.capitalize = () => this.substr( 0, 1 ).toUpperCase() + this.substr(1);
+
 server.register([require('vision'), require('inert'), { register: require('lout') }], (err) => {});
 
 server.route({
@@ -76,7 +80,7 @@ server.route({
     },
     handler: (request, reply) => {
         let ascii = figlet.textSync(request.params.string, {
-            font: (request.params.font) ? request.params.font : 'standard',
+            font: (request.params.font) ? request.params.font.titleize() : 'standard'.titleize(),
             horizontalLayout: 'default',
             verticalLayout: 'default'
         });
