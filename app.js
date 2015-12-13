@@ -3,7 +3,11 @@
 const Hapi = require('hapi'),
       figlet = require('figlet'),
       pkg = require('./package.json'),
-      Joi = require('joi');
+      Joi = require('joi'),
+      fs = require('fs');
+
+
+let history = require('./tracking.json');
 
 const server = new Hapi.Server();
 server.connection({
@@ -88,7 +92,16 @@ server.route({
                 font: font,
                 horizontalLayout: 'default',
                 verticalLayout: 'default'
-            });
+            }),
+            trackingObj = {
+                string: request.params.string,
+                font: font,
+                date: new Date()
+            };
+
+        history.push(trackingObj);
+        fs.writeFileSync('./tracking.json', JSON.stringify(history));
+
         return reply(ascii);
     }
 });
