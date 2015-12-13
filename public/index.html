@@ -1,0 +1,71 @@
+<!doctype html>
+<!--
+  __ _       _       __
+ / _(_) __ _| | ___ / _|_   _
+| |_| |/ _` | |/ _ \ |_| | | |
+|  _| | (_| | |  __/  _| |_| |
+|_| |_|\__, |_|\___|_|  \__, |
+       |___/            |___/
+-->
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Figlefy</title>
+        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/highlight_styles/railscasts.css">
+    </head>
+    <body>
+        <main class="main">
+            <header>
+                <nav>
+                    <a class="button" href="/docs" target="_blank">API docs</a>
+                </nav>
+                <div id="logo" class="logo">
+  __ _       _       __
+ / _(_) __ _| | ___ / _|_   _
+| |_| |/ _` | |/ _ \ |_| | | |
+|  _| | (_| | |  __/  _| |_| |
+|_| |_|\__, |_|\___|_|  \__, |
+        |___/            |___/
+
+    Some awesome slogal here
+                </div>
+                <div class="links">
+                    <a class="icon" href="https://github.com/RamonGebben/figlefy" target="_blank"><img src="/img/github.svg" /></a>
+                </div>
+            </header>
+
+            <div class="content">
+                <article class="welcome">
+                    <h2>Welcome to figlefy</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </article>
+                <article class="api_into">
+                    <h2>API Overview</h2>
+                    <p>The API works very simple. The request url should be build of like this: `http://figlefy.ra-ge.net/figlefy/{URI encoded string}/{font}`</p>
+                    <p>The `{font}` is optional. If you de not specify any font you will get the default font. A small example using `fetch`:</p>
+                    <pre>
+                        <code class="javascript">
+const figlefyAPI = 'http://figlefy.ra-ge.net/figlefy/';
+let myString = 'Hello figlefy';
+
+fetch(figlefyAPI + encodeURIComponent(myString))
+    .then( res => res.text())
+    .then(figlefied => {
+        console.log(figlefied);
+    });
+                        </code>
+                    </pre>
+                </article>
+            </div>
+        </main>
+        <footer>
+            <div class="made_with_love">
+                Made with love by <a href="http://ramon-gebben.ninja">Ramon Gebben</a>
+            </div>
+        </footer>
+        <script src="/js/highlight.pack.js"></script>
+        <script type="text/javascript" src="/js/index.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+</html>

@@ -1,0 +1,107 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+html, body, main { height: 100%;}
+
+nav {
+    position: absolute;
+    top: 0; right: 0;
+    padding: 1em;
+}
+
+.button {
+    padding: 0.8em;
+    border: 1px solid #323232;
+    border-radius: 4px;
+    color: #fff;
+    transition: all .2s ease-out;
+}
+
+.button:visited {
+    color: #fff;
+}
+
+.button:hover {
+    background-color: #323232;
+    transition: all .2s ease-out;
+}
+
+header {
+    background-color: rgb(24, 29, 32);
+    color: limegreen;
+    min-height: 20em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+a, a:visited {
+    color: #3E82F7;
+    text-decoration: none;
+}
+
+.links {
+    position: absolute;
+    bottom: -32px;
+    right: 0em;
+    padding: 0 0.5em;
+}
+
+.icon, .button {
+    display: inline-block;
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+}
+
+.links .icon img {
+    transition: all .2s ease-in;
+};
+
+
+.links .icon:hover img {
+    transform: scale(1.1);
+    transition: all .2s ease-out;
+}
+
+.logo {
+    white-space: pre-wrap;
+    font-family: monospace;
+    margin: 0 auto;
+    max-width: 18em;
+    width: 100%;
+}
+
+.content {
+    padding: 0 2em;
+}
+
+code, pre {
+    background-color: rgb(24, 29, 32) !important;
+    color: limegreen;
+}
+
+pre {
+    padding: 0 1em;
+    overflow-x: scroll;
+    display: block;
+    border-radius: 4px;
+}
+
+.made_with_love {
+    text-align: center;
+    padding: 0.7em;
+}
