@@ -8,7 +8,7 @@ const Hapi = require('hapi'),
 const server = new Hapi.Server();
 server.connection({
     host: '127.0.0.1',
-    port: 8000
+    port: 7458
 });
 
 server.register([require('vision'), require('inert'), { register: require('lout') }], (err) => {});
@@ -76,7 +76,7 @@ server.route({
     },
     handler: (request, reply) => {
         let ascii = figlet.textSync(request.params.string, {
-            font: (request.params.font) ? request.params.font : 'standard',
+            font: (request.params.font) ? request.params.font : 'Standard',
             horizontalLayout: 'default',
             verticalLayout: 'default'
         });
