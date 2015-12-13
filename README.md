@@ -16,12 +16,12 @@ Thats it. For development I use [Nodemon](https://github.com/remy/nodemon) which
 
 ### API Overview
 
-The API works very simple. The request url should be build of like this: `http://figlefy.ra-ge.net/figlefy/{URI encoded string}/{font}`
+The API works very simple. The request url should be build of like this: `http://figlefy.com/figlefy/{URI encoded string}/{font}`
 
 The `{font}` is optional. If you de not specify any font you will get the default font. A small example using `fetch`:
 
 ```javascript
-const figlefyAPI = 'http://figlefy.ra-ge.net/figlefy/';
+const figlefyAPI = 'http://figlefy.com/figlefy/';
 let myString = 'Hello figlefy';
 
 fetch(figlefyAPI + encodeURIComponent(myString))
@@ -46,7 +46,7 @@ This will return a `String` which looks like this when presented in a monospace 
 If you want to get an overview of all the posible fonts make a request to `/fonts`:
 
 ```javascript
-const fontListURL = 'http://figlefy.ra-ge.net/figlefy/';
+const fontListURL = 'http://figlefy.com/fonts/';
 
 fetch(fontListURL)
     .then( res => res.json())

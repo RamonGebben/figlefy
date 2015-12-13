@@ -41,11 +41,11 @@
                 </article>
                 <article class="api_into">
                     <h3>API Overview</h3>
-                    <p>The API works very simple. The request url should be build of like this: <code>http://figlefy.ra-ge.net/figlefy/{URI encoded string}/{font}</code></p>
+                    <p>The API works very simple. The request url should be build of like this: <code>http://figlefy.com/figlefy/{URI encoded string}/{font}</code></p>
                     <p>The <code>{font}</code> is optional. If you de not specify any font you will get the default font. A small example using <code>fetch</code>:</p>
                     <pre>
                         <code class="javascript">
-const figlefyAPI = 'http://figlefy.ra-ge.net/figlefy/';
+const figlefyAPI = 'http://figlefy.com/figlefy/';
 let myString = 'Hello figlefy';
 
 fetch(figlefyAPI + encodeURIComponent(myString))
@@ -71,7 +71,7 @@ fetch(figlefyAPI + encodeURIComponent(myString))
                     <p>If you want to get an overview of all the posible fonts make a request to <code>/fonts</code>:</p>
                     <pre>
                         <code class="javascript">
-const fontListURL = 'http://figlefy.ra-ge.net/figlefy/';
+const fontListURL = 'http://figlefy.com/fonts/';
 
 fetch(fontListURL)
     .then( res => res.json())
