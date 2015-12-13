@@ -16,6 +16,11 @@ server.register([require('vision'), require('inert'), { register: require('lout'
 server.route({
     method: 'GET',
     path: '/{param*}',
+    config: {
+        plugins: {
+            lout: false
+        }
+    },
     handler: {
         directory: {
             path: './public'
