@@ -12,8 +12,12 @@ server.connection({
 });
 
 
-String.prototype.titleize = () => this.split(/[.?*+^$[\]\\(){}_\s|-]/g).map(function( s ){ return s.capitalize(); }).join(' ');
-String.prototype.capitalize = () => this.substr( 0, 1 ).toUpperCase() + this.substr(1);
+String.prototype.titleize = function() {
+    this.split(/[.?*+^$[\]\\(){}_\s|-]/g).map(function( s ){ return s.capitalize(); }).join(' ');
+}
+String.prototype.capitalize = function() {
+    this.substr( 0, 1 ).toUpperCase() + this.substr(1);
+}
 
 server.register([require('vision'), require('inert'), { register: require('lout') }], (err) => {});
 
